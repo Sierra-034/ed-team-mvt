@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Articulo(models.Model):
     titulo = models.CharField(max_length=200)
-    imagen = models.CharField(max_length=255)
+    imagen = models.ImageField(upload_to='articulos', blank=True)
     autor = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
